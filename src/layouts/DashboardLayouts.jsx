@@ -24,7 +24,7 @@ export default function DashboardLayouts() {
                                 <Link
                                     key={index}
                                     to={value.path}
-                                    style={location.path === value.path ? STYLE.active : {}}
+                                    style={location.pathname === value.path ? STYLE.active : STYLE.inactive}
                                     className="block px-4  rounded hover:underline hover:text-white transition"
                                 >
                                     {value.text}
@@ -47,5 +47,8 @@ export default function DashboardLayouts() {
 const STYLE = {
     active: {
         color: "white"
+    },
+    inactive: {
+        color: "gray"
     }
 };

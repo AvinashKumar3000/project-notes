@@ -22,7 +22,6 @@ export default function AppRoutes() {
         <Route path="/sign-up" element={<SignUp />} />
       </Route>
       <Route path="/dashboard" element={<DashboardLayouts />}>
-        <Route index element={<Intro />} />
         <Route path="/dashboard/intro" element={<Intro />} />
         <Route path="/dashboard/counter" element={<Counter />} />
         <Route path="/dashboard/calc" element={<Calculator />} />
