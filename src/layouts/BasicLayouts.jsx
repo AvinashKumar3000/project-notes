@@ -21,6 +21,9 @@ function BasicLayouts() {
             <main className="">
                 <Outlet />
             </main>
+            <footer className="bg-gray-100 text-gray-600 py-4 text-center mt-8 border-t">
+                © {new Date().getFullYear()} Notes App. All rights reserved.
+            </footer>
         </>
     );
 }
