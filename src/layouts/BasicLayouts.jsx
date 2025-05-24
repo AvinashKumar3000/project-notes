@@ -12,7 +12,7 @@ function BasicLayouts() {
                     <div className="bg-white text-black px-4 py-2 rounded">sign-up</div>
                 </div>
             </header>
-            <main className="p-6">
+            <main className="">
                 <Outlet />
             </main>
         </>
