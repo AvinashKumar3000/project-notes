@@ -1,3 +1,12 @@
+# install commands
+
+```bash
+npm i react-router react-router-dom
+npm i tailwindcss @tailwindcss/vite
+npm install sweetalert2
+```
+
+
 # git code
 
 ```bash
