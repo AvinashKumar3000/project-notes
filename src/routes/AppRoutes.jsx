@@ -8,14 +8,14 @@ import BasicLayouts from "../layouts/BasicLayouts";
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<BasicLayouts/>}>
+      <Route path="/" element={<BasicLayouts />}>
         <Route index element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
-
-        <Route path="*" element={<NotFound />} />
       </Route>
+      
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }

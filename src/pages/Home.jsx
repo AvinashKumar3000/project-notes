@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function Home() {
   return (
     <>
@@ -6,7 +8,9 @@ export default function Home() {
           Welcome to My Application
         </div>
         <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg shadow-lg text-lg transition duration-300">
+          <Link to={'/login'}>
           Get Started
+          </Link>
         </button>
       </section>
     </>
