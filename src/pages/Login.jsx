@@ -1,25 +1,16 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router';
+import AuthContext from '../context/AuthContext';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  const { login } = useContext(AuthContext);
+ 
   function handleSubmit(event) {
     event.preventDefault();
-    if (email === "admin@gmail.com" && password === "admin") {
-      Swal.fire({
-        title: "Success",
-        text: "Login is successful",
-        icon: "success"
-      });
-    } else {
-       Swal.fire({
-        title: "Invalid",
-        text: "Login is invalid",
-        icon: "error"
-      });
-    }
+    login(email, password);
   }
 
   return (
