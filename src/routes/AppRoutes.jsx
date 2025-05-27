@@ -10,7 +10,6 @@ import Counter from "../pages/dashboard/Counter";
 import Calculator from "../pages/dashboard/Calculator";
 import TodoList from "../pages/dashboard/TodoList";
 import Profile from "../pages/dashboard/Profile";
-import Settings from "../pages/dashboard/Settings";
 import PrivateRoute from "./PrivateRoute";
 
 export default function AppRoutes() {
@@ -34,7 +33,6 @@ export default function AppRoutes() {
         <Route path="/dashboard/calc" element={<Calculator />} />
         <Route path="/dashboard/todo-list" element={<TodoList />} />
         <Route path="/dashboard/profile" element={<Profile />} />
-        <Route path="/dashboard/settings" element={<Settings />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />

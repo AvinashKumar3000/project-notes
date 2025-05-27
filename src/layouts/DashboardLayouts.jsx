@@ -8,7 +8,6 @@ const PATHS = [
     { path: '/dashboard/calc', text: 'calculator' },
     { path: '/dashboard/todo-list', text: 'todo list' },
     { path: '/dashboard/profile', text: 'profile' },
-    { path: '/dashboard/settings', text: 'settings' },
 ];
 
 export default function DashboardLayouts() {
