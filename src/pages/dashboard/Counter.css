@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+}
+#counter  { 
+    margin: 10px;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 20px;
+}
+#counter .jar {
+    background-color: gray;
+    width: 50px;
+    height: 100px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#counter .jar-cap {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: block;
+    margin-left: -5px;
+    width: 60px;
+    content: "sd";
+    color: red;
+    font-size: 8px;
+    background-color: red;
+}
+
+#counter .water {
+    background-color: skyblue;
+    height: 50%;
+    margin: 2px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    animation: water-moving 2s 1s ease-in-out infinite alternate;
+}
+
+@keyframes water-moving {
+    from {
+        background-color: rgb(135, 235, 157);
+    }
+    to {
+        background-color: rgb(0, 255, 4);
+    }
+}
