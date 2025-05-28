@@ -6,7 +6,6 @@ npm i tailwindcss @tailwindcss/vite
 npm install sweetalert2
 ```
 
-
 # git code
 
 ```bash

@@ -12,6 +12,7 @@ import TodoList from "../pages/dashboard/TodoList";
 import Profile from "../pages/dashboard/Profile";
 import PrivateRoute from "./PrivateRoute";
 import StopWatch from "../pages/dashboard/StopWatch";
+import Cms from "../pages/dashboard/Cms";
 
 export default function AppRoutes() {
   return (
@@ -35,6 +36,7 @@ export default function AppRoutes() {
         <Route path="/dashboard/todo-list" element={<TodoList />} />
         <Route path="/dashboard/profile" element={<Profile />} />
         <Route path="/dashboard/stop-watch" element={<StopWatch />} />
+        <Route path="/dashboard/cms" element={<Cms />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />

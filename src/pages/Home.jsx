@@ -1,18 +1,39 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <>
-      <section className="flex flex-col items-center justify-center min-h-[80vh] px-4">
-        <div className="text-gray-800 text-3xl font-bold mb-4">
-          Welcome to My Application
-        </div>
-        <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg shadow-lg text-lg transition duration-300">
-          <Link to={'/login'}>
-          Get Started
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="relative z-10 max-w-screen-sm mx-auto p-8">
+        <h4 className="text-lg font-semibold text-gray-800 mb-2">
+          Column N.A. Member FDIC
+        </h4>
+        <h1 className="text-4xl font-extrabold mb-4 leading-tight">
+          The developer
+          <br />
+          infrastructure bank
+        </h1>
+        <p className="text-lg text-gray-700 mb-6">
+          The only nationally chartered bank built to enable developers and builders to cre
+          <span className="inline-block animate-typing border-r-2 border-gray-800 ml-1">
+            ate new financial products
+          </span>
+        </p>
+        <div className="flex gap-4">
+          <Link
+            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition"
+            to='/login'
+            rel="noopener noreferrer"
+          >
+            Get started
           </Link>
-        </button>
-      </section>
-    </>
+          <Link
+            className="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-800 font-semibold rounded hover:bg-gray-200 transition"
+            to="#"
+          >
+            Enjoy Yourself
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }
