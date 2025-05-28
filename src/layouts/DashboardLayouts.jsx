@@ -5,6 +5,7 @@ import AuthContext from "../context/AuthContext";
 const PATHS = [
     { path: '/dashboard/intro', text: 'intro' },
     { path: '/dashboard/counter', text: 'counter' },
+    { path: '/dashboard/stop-watch', text: 'stop watch' },
     { path: '/dashboard/calc', text: 'calculator' },
     { path: '/dashboard/todo-list', text: 'todo list' },
     { path: '/dashboard/profile', text: 'profile' },
