@@ -3,12 +3,12 @@ import { Link, Outlet, useLocation } from "react-router";
 import AuthContext from "../context/AuthContext";
 
 const PATHS = [
-    { path: '/dashboard/intro', text: 'intro' },
-    { path: '/dashboard/counter', text: 'counter' },
-    { path: '/dashboard/stop-watch', text: 'stop watch' },
-    { path: '/dashboard/calc', text: 'calculator' },
-    { path: '/dashboard/todo-list', text: 'todo list' },
-    { path: '/dashboard/profile', text: 'profile' },
+    { path: '/dashboard/intro', text: '🚩 intro' },
+    { path: '/dashboard/counter', text: '1️⃣ counter' },
+    { path: '/dashboard/stop-watch', text: '⌚ stop watch' },
+    { path: '/dashboard/calc', text: '🟰 calculator' },
+    { path: '/dashboard/todo-list', text: '📝 todo list' },
+    { path: '/dashboard/profile', text: '🧑 profile' },
 ];
 
 const DASHBOARD_PATHS = [
@@ -27,7 +27,7 @@ export default function DashboardLayouts() {
         <div className="flex min-h-screen bg-gray-100">
             <aside className="p-8 w-60 sticky top-0 h-screen bg-gradient-to-b from-gray-900 to-gray-800 flex flex-col items-center shadow-2xl">
                 <span className="text-3xl font-extrabold mb-8 text-white tracking-wide">Dashboard</span>
-                <nav className="flex flex-col gap-3 w-full">
+                <nav className="flex flex-col gap-0.5 w-full">
                     {PATHS.map((value, index) => (
                         <Link
                             key={index}
@@ -43,7 +43,7 @@ export default function DashboardLayouts() {
                     ))}
                 </nav>
                 <span className="mt-5 pt-5 border-t-2 border-t-gray-200 text-3xl font-extrabold mb-8 text-white tracking-wide text-left">CMS</span>
-                <nav className="flex flex-col gap-3 w-full">
+                <nav className="flex flex-col gap-0.5 w-full">
                     {DASHBOARD_PATHS.map((value, index) => (
                         <Link
                             key={index}

@@ -165,7 +165,7 @@ export default function AddNewItem() {
                         className="h-5 w-5 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
                     />
                     <label htmlFor="isPrivate" className="text-gray-700 font-medium select-none">
-                        Private (only visible to current users )
+                        Private ( saved by name of user )
                     </label>
                 </div>
 

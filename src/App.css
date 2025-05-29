@@ -1,7 +1,24 @@
 .playcard {
-    transition: transform 0.2s cubic-bezier(.4,2,.6,1);
+  transition: transform 0.2s cubic-bezier(0.4, 2, 0.6, 1);
 }
 .playcard:hover {
-    transform: scale(1.07) rotate(-2deg);
-    box-shadow: 0 16px 40px 0 rgba(0,0,0,0.18);
+  transform: scale(1.07) rotate(-2deg);
+  box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.18);
+}
+
+.animate-typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #333;
+  width: 0;
+  animation: typing 2s steps(20, end) infinite alternate;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
