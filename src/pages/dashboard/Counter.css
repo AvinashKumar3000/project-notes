@@ -40,17 +40,39 @@
     overflow: hidden;
     text-align: center;
     z-index: 1;
-    background: linear-gradient(120deg, #aeefff 60%, #4fc3f7 100%);
-    background-size: 200% 100%;
-    background-position: 0% 0%;
-    animation: water-reflection 3s linear infinite alternate;
+    transition: 1s;
+    background: linear-gradient(120deg, #aeefff 60%, #4fc2f757 100%);
 }
 
-@keyframes water-reflection {
+#counter .water::before,
+#counter .water::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 200%;
+    height: 200%;
+    transform: translate(-50%, -75%);
+    border-radius: 46%;
+    pointer-events: none;
+}
+
+#counter .water::before {
+    background-color: rgba(174, 239, 255, 0.265);
+    animation: water-animate 5s linear infinite;
+}
+
+#counter .water::after {
+    background-color: rgba(79, 195, 247, 0.5);
+    border-radius: 40%;
+    animation: water-animate 10s linear infinite;
+}
+
+@keyframes water-animate {
     0% {
-        background-position: 0% 0%;
+        transform: translate(-50%, -75%) rotate(0deg);
     }
     100% {
-        background-position: 100% 100%;
+        transform: translate(-50%, -75%) rotate(360deg);
     }
 }

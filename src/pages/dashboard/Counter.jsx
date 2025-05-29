@@ -11,12 +11,12 @@ export default function Counter() {
 
     function handleIncr() {
         if(level<100){
-            setLevel(100);
+            setLevel(level + 10);
         }
     }
     function handleDecr() {
         if(level>0){
-            setLevel(level - 1);
+            setLevel(level - 10);
         }
     }
 

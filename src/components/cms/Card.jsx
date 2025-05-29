@@ -1,11 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import StorageContext from "../../context/StorageContext";
 
 export default function Card({ item, index }) {
-    const { deleteItem } = useContext(StorageContext); // Access function from context
+    const [isFavorite, setIsFavorite] = useState(item?.isFavorite);
+    const { deleteItem, updateItem } = useContext(StorageContext); // Access function from context
 
     function handleDelete() {
         deleteItem(index);
+    }
+
+    function handleFavorite() {
+        updateItem(index,{ isFavorite: !isFavorite});
+        setIsFavorite(!isFavorite);
     }
 
     return (
@@ -23,13 +29,18 @@ export default function Card({ item, index }) {
                     {item.stock > 0 ? `In Stock (${item.stock})` : 'Out of Stock'}
                 </span>
             </div>
-            <div className="flex     gap-2 mt-4">
-                <button className="cursor-pointer px-3 py-1 bg-yellow-100 text-yellow-800 rounded hover:bg-yellow-200 transition">✏️ edit</button>
+            <div className="flex gap-2 mt-4">
                 <button
                     className="cursor-pointer px-3 py-1 bg-red-100 text-red-700 rounded hover:bg-red-200 transition"
                     onClick={handleDelete}
                 >
                     🗑️ delete
+                </button>
+                <button
+                    className={`cursor-pointer px-3 py-1 rounded transition ${item?.isFavorite ? 'bg-yellow-300 text-yellow-900' : 'bg-gray-100 text-gray-700 hover:bg-yellow-100'}`}
+                    onClick={handleFavorite}
+                >
+                    <span>{isFavorite ? '⭐ Favorited' : '☆ Mark as favorite'}</span>
                 </button>
             </div>
         </div>

@@ -9,7 +9,13 @@ const PATHS = [
     { path: '/dashboard/calc', text: 'calculator' },
     { path: '/dashboard/todo-list', text: 'todo list' },
     { path: '/dashboard/profile', text: 'profile' },
-    { path: '/dashboard/cms', text: 'CMS [project]' },
+];
+
+const DASHBOARD_PATHS = [
+    { path: '/dashboard/cms/user-stats', text: '🧑‍🏫 stats'},
+    { path: '/dashboard/cms/add', text: '🆕 Add new ' },
+    { path: '/dashboard/cms/display', text: '📃 All content ' },
+    { path: '/dashboard/cms/favorites', text: '⭐ My Favorites ' },
 ];
 
 export default function DashboardLayouts() {
@@ -22,6 +28,22 @@ export default function DashboardLayouts() {
                 <span className="text-3xl font-extrabold mb-8 text-white tracking-wide">Dashboard</span>
                 <nav className="flex flex-col gap-3 w-full">
                     {PATHS.map((value, index) => (
+                        <Link
+                            key={index}
+                            to={value.path}
+                            style={location.pathname === value.path ? STYLE.active : STYLE.inactive}
+                            className={`block px-4 py-2 rounded-lg font-medium transition 
+                                ${location.pathname === value.path
+                                    ? "bg-blue-600 shadow text-white"
+                                    : "hover:bg-gray-700 hover:text-white text-gray-300"}`}
+                        >
+                            {value.text.charAt(0).toUpperCase() + value.text.slice(1)}
+                        </Link>
+                    ))}
+                </nav>
+                <span className="mt-5 pt-5 border-t-2 border-t-gray-200 text-3xl font-extrabold mb-8 text-white tracking-wide text-left">CMS</span>
+                <nav className="flex flex-col gap-3 w-full">
+                    {DASHBOARD_PATHS.map((value, index) => (
                         <Link
                             key={index}
                             to={value.path}

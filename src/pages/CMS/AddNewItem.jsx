@@ -1,8 +1,10 @@
 import { useContext, useState } from "react"
 import StorageContext from "../../context/StorageContext";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 // Toys shop, toy details management system.
-export default function AddItem() {
+export default function AddNewItem() {
     const [name, setName] = useState('');
     const [imgUrl, setImgUrl] = useState('');
     const [desc, setDesc] = useState('');
@@ -16,6 +18,8 @@ export default function AddItem() {
 
     const { addNewItem } = useContext(StorageContext);
 
+    const navigate = useNavigate();
+
     function handleSubmit(event) {
         event.preventDefault();
         addNewItem({
@@ -28,10 +32,18 @@ export default function AddItem() {
             category,
             priceRange,
             madeIn,
-            ageCategory
+            ageCategory,
+            isFavorite: false
         });
-    
+        Swal.fire({
+            title: "Success!",
+            text: "New toy item added successfully.",
+            icon: "success",
+            confirmButtonText: "OK"
+        });
+        navigate('/dashboard/cms/display');
     }
+
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 py-12 px-4">

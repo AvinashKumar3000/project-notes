@@ -1,9 +1,10 @@
 import Area from "../../components/calculator/Area";
+import Calc from "../../components/calculator/Calc";
 import Perimeter from "../../components/calculator/Perimeter";
 import Volume from "../../components/calculator/Volume";
 import { useState } from "react";
 
-const NAV = [<Area/>,<Perimeter/>,<Volume/>];
+const NAV = [<Area/>,<Perimeter/>,<Volume/>,<Calc/>];
 
 export default function Calculator() {
   const [tab, setTab] = useState(0);
@@ -27,6 +28,12 @@ export default function Calculator() {
           className={`cursor-pointer px-4 py-2 rounded ${tab === 2 ? "bg-blue-500 text-white" : "bg-gray-200"}`}
         >
           volume
+        </span>
+        <span
+          onClick={() => setTab(3)}
+          className={`cursor-pointer px-4 py-2 rounded ${tab === 3 ? "bg-blue-500 text-white" : "bg-gray-200"}`}
+        >
+          Original Calculator
         </span>
       </div>
       <div className="bg-white p-4 rounded shadow">
