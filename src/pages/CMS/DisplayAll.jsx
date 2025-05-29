@@ -6,7 +6,7 @@ export default function DisplayAll() {
     const { items } = useContext(StorageContext); // Access function from context
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
+        <div className="flex flex-wrap gap-5">
             {
                 items.map((value, index) => {
                     return (

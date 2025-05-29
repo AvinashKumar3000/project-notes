@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router';
 
 const AuthContext = createContext();
 function AuthProvider({ children }) {
+	const [userEmail, setUserEmail] = useState(null);
 	const [isAuth, setIsAuth] = useState(false);
 	const navigate = useNavigate();
 
@@ -13,6 +14,11 @@ function AuthProvider({ children }) {
 		try {
 			userService.authenticate(email, password);
 			setIsAuth(true);
+			setUserEmail(email);
+			// Add login action to history
+			import('../service/historyService').then(({ default: historyService }) => {
+				historyService.addHistory(email, 'login');
+			});
 			navigate('/dashboard/intro');
 			Swal.fire({
 				title: "Success",
@@ -29,6 +35,7 @@ function AuthProvider({ children }) {
 	}
 	function logout() {
 		setIsAuth(false);
+		setUserEmail(null);
 		Swal.fire({
 			title: "Success",
 			text: "Logout successful",
@@ -54,7 +61,7 @@ function AuthProvider({ children }) {
 		}
 	}
 	return (
-		<AuthContext.Provider value={{ login, logout, register, isAuth }}>
+		<AuthContext.Provider value={{ login, logout, register, isAuth, userEmail }}>
 			{children}
 		</AuthContext.Provider>
 	);

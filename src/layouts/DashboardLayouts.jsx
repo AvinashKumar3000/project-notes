@@ -16,6 +16,7 @@ const DASHBOARD_PATHS = [
     { path: '/dashboard/cms/add', text: '🆕 Add new ' },
     { path: '/dashboard/cms/display', text: '📃 All content ' },
     { path: '/dashboard/cms/favorites', text: '⭐ My Favorites ' },
+    { path: '/dashboard/cms/my-content', text: '😍 My Items ' },
 ];
 
 export default function DashboardLayouts() {

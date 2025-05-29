@@ -1,5 +1,6 @@
 const mockToys = [
   {
+    isPrivate: false,
     isFavorite: false,
     name: "Superman Action Figure",
     imgUrl:
@@ -14,6 +15,7 @@ const mockToys = [
     ageCategory: "4-7",
   },
   {
+    isPrivate: false,
     isFavorite: false,
     name: "Magnetic Puzzle Box",
     imgUrl: "https://m.media-amazon.com/images/I/61muefUGSTL.jpg",
@@ -27,6 +29,7 @@ const mockToys = [
     ageCategory: "8-12",
   },
   {
+    isPrivate: false,
     isFavorite: false,
     name: "Barbie Dream Doll",
     imgUrl:

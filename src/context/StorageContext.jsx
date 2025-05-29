@@ -1,12 +1,14 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import mockToys from "../mocks/toysMock";
 import storageService from "../service/storageService"; // adjust path as needed
+import AuthContext from "./AuthContext";
 
 const STORAGE_KEY = "toys";
 const StorageContext = createContext();
 
 function StorageProvider({ children }) {
     const [items, setItems] = useState([]);
+    const { userEmail } = useContext(AuthContext);
 
     useEffect(() => {
         // Initialize storage if empty
@@ -22,6 +24,9 @@ function StorageProvider({ children }) {
     }
 
     function addNewItem(newItem) {
+        if(newItem.isPrivate) {
+            newItem['ownedBy'] = userEmail;
+        }
         const newItems = [...items, newItem];
         syncItems(newItems);
         console.log(newItem);

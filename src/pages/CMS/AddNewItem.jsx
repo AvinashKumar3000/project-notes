@@ -15,6 +15,7 @@ export default function AddNewItem() {
     const [priceRange, setPriceRange] = useState('');
     const [madeIn, setMadeIn] = useState('');
     const [ageCategory, setAgeCategory] = useState('');
+    const [isPrivate, setIsPrivate] = useState(false);
 
     const { addNewItem } = useContext(StorageContext);
 
@@ -33,7 +34,8 @@ export default function AddNewItem() {
             priceRange,
             madeIn,
             ageCategory,
-            isFavorite: false
+            isFavorite: false,
+            isPrivate
         });
         Swal.fire({
             title: "Success!",
@@ -91,7 +93,7 @@ export default function AddNewItem() {
                         <input
                             type="number"
                             placeholder="Price"
-                        required
+                            required
                             min={0}
                             value={price}
                             onChange={e => setPrice(e.target.value)}
@@ -100,7 +102,7 @@ export default function AddNewItem() {
                         <input
                             type="number"
                             placeholder="Stock"
-                        required
+                            required
                             min={0}
                             value={stock}
                             onChange={e => setStock(e.target.value)}
@@ -111,6 +113,7 @@ export default function AddNewItem() {
                         value={category}
                         onChange={e => setCategory(e.target.value)}
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-purple-400 focus:outline-none transition bg-white"
+                        required
                     >
                         <option value="">Select Category</option>
                         <option value="Action Figure">Action Figure</option>
@@ -122,6 +125,7 @@ export default function AddNewItem() {
                         value={priceRange}
                         onChange={e => setPriceRange(e.target.value)}
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-purple-400 focus:outline-none transition bg-white"
+                        required
                     >
                         <option value="">Select Price Range</option>
                         <option value="Low">Low</option>
@@ -132,8 +136,9 @@ export default function AddNewItem() {
                         value={madeIn}
                         onChange={e => setMadeIn(e.target.value)}
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-purple-400 focus:outline-none transition bg-white"
+                        required
                     >
-                        <option value="">select country ( made in )</option>
+                        <option value="">Select country (made in)</option>
                         <option value="India">India</option>
                         <option value="China">China</option>
                     </select>
@@ -141,6 +146,7 @@ export default function AddNewItem() {
                         value={ageCategory}
                         onChange={e => setAgeCategory(e.target.value)}
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-purple-400 focus:outline-none transition bg-white"
+                        required
                     >
                         <option value="">Select Age Category</option>
                         <option value="0-3">0-3</option>
@@ -149,16 +155,30 @@ export default function AddNewItem() {
                         <option value="13+">13+</option>
                     </select>
                 </div>
-                <div className="flex justify-between mt-8">
+
+                <div className="flex items-center space-x-3">
+                    <input
+                        id="isPrivate"
+                        type="checkbox"
+                        checked={isPrivate}
+                        onChange={e => setIsPrivate(e.target.checked)}
+                        className="h-5 w-5 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+                    />
+                    <label htmlFor="isPrivate" className="text-gray-700 font-medium select-none">
+                        Private (only visible to current users )
+                    </label>
+                </div>
+
+                <div className="flex justify-between mt-8 space-x-4">
                     <button
                         type="submit"
-                        className="w-1/2 mr-2 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold shadow-lg hover:from-purple-600 hover:to-pink-600 transition"
+                        className="w-1/2 py-3 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold shadow-lg hover:from-purple-600 hover:to-pink-600 transition"
                     >
                         Submit
                     </button>
                     <button
                         type="reset"
-                        className="w-1/2 ml-2 py-3 rounded-xl bg-gray-100 text-gray-700 font-bold shadow hover:bg-gray-200 transition"
+                        className="w-1/2 py-3 rounded-xl bg-gray-100 text-gray-700 font-bold shadow hover:bg-gray-200 transition"
                     >
                         Reset
                     </button>

@@ -16,6 +16,7 @@ import UserStats from "../pages/CMS/UserStats";
 import AddNewItem from "../pages/CMS/AddNewItem";
 import DisplayAll from "../pages/CMS/DisplayAll";
 import MyFavorites from "../pages/CMS/MyFavorites";
+import MyItems from "../pages/CMS/MyItems";
 
 export default function AppRoutes() {
   return (
@@ -44,6 +45,7 @@ export default function AppRoutes() {
         <Route path='/dashboard/cms/add' element={<AddNewItem />} />
         <Route path='/dashboard/cms/display' element={<DisplayAll />} />
         <Route path='/dashboard/cms/favorites' element={<MyFavorites />} />
+        <Route path='/dashboard/cms/my-content' element={<MyItems />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />
