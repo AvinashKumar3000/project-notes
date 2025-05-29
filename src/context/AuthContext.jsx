@@ -21,15 +21,15 @@ function AuthProvider({ children }) {
 			});
 			navigate('/dashboard/intro');
 			Swal.fire({
-				title: "Success",
-				text: "Login is successful",
-				icon: "success"
+				title: 'Success',
+				text: 'Login is successful',
+				icon: 'success',
 			});
 		} catch (error) {
 			Swal.fire({
-				title: "Invalid",
+				title: 'Invalid',
 				text: error.message,
-				icon: "error"
+				icon: 'error',
 			});
 		}
 	}
@@ -37,9 +37,9 @@ function AuthProvider({ children }) {
 		setIsAuth(false);
 		setUserEmail(null);
 		Swal.fire({
-			title: "Success",
-			text: "Logout successful",
-			icon: "success"
+			title: 'Success',
+			text: 'Logout successful',
+			icon: 'success',
 		});
 	}
 	function register(email, password) {
@@ -48,15 +48,15 @@ function AuthProvider({ children }) {
 			setIsAuth(true);
 			navigate('/dashboard/intro');
 			Swal.fire({
-				title: "Success",
-				text: "Registration is successful",
-				icon: "success"
+				title: 'Success',
+				text: 'Registration is successful',
+				icon: 'success',
 			});
 		} catch (error) {
 			Swal.fire({
-				title: "Invalid",
+				title: 'Invalid',
 				text: error.message,
-				icon: "error"
+				icon: 'error',
 			});
 		}
 	}

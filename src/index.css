@@ -1,12 +1,12 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-    box-sizing: border-box;
-    font-family: monospace;
+	box-sizing: border-box;
+	font-family: monospace;
 }
 
 body {
-    margin: 0;
+	margin: 0;
 }
 /* 
 button {

@@ -1,78 +1,78 @@
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
-#counter  { 
-    margin: 10px;
-    border: 1px solid black;
-    width: fit-content;
-    padding: 20px;
+#counter {
+	margin: 10px;
+	border: 1px solid black;
+	width: fit-content;
+	padding: 20px;
 }
 #counter .jar {
-    background-color: #ccc;
-    width: 50px;
-    height: 100px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    position: relative;
-    overflow: hidden;
+	background-color: #ccc;
+	width: 50px;
+	height: 100px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	position: relative;
+	overflow: hidden;
 }
 #counter .jar-cap {
-    color: transparent;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    display: block;
-    margin-left: -5px;
-    width: 60px;
-    height: 12px;
-    background-color: #b00;
+	color: transparent;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	display: block;
+	margin-left: -5px;
+	width: 60px;
+	height: 12px;
+	background-color: #b00;
 }
 #counter .water {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-    z-index: 1;
-    transition: 1s;
-    background: linear-gradient(120deg, #aeefff 60%, #4fc2f757 100%);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	overflow: hidden;
+	text-align: center;
+	z-index: 1;
+	transition: 1s;
+	background: linear-gradient(120deg, #aeefff 60%, #4fc2f757 100%);
 }
 
 #counter .water::before,
 #counter .water::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 200%;
-    height: 200%;
-    transform: translate(-50%, -75%);
-    border-radius: 46%;
-    pointer-events: none;
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 200%;
+	height: 200%;
+	transform: translate(-50%, -75%);
+	border-radius: 46%;
+	pointer-events: none;
 }
 
 #counter .water::before {
-    background-color: rgba(174, 239, 255, 0.265);
-    animation: water-animate 5s linear infinite;
+	background-color: rgba(174, 239, 255, 0.265);
+	animation: water-animate 5s linear infinite;
 }
 
 #counter .water::after {
-    background-color: rgba(79, 195, 247, 0.5);
-    border-radius: 40%;
-    animation: water-animate 10s linear infinite;
+	background-color: rgba(79, 195, 247, 0.5);
+	border-radius: 40%;
+	animation: water-animate 10s linear infinite;
 }
 
 @keyframes water-animate {
-    0% {
-        transform: translate(-50%, -75%) rotate(0deg);
-    }
-    100% {
-        transform: translate(-50%, -75%) rotate(360deg);
-    }
+	0% {
+		transform: translate(-50%, -75%) rotate(0deg);
+	}
+	100% {
+		transform: translate(-50%, -75%) rotate(360deg);
+	}
 }
