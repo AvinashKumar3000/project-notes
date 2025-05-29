@@ -9,6 +9,6 @@ export default function PrivateRoute({ children }) {
 		if (!isAuth) {
 			navigate('/login');
 		}
-	}, [isAuth]);
+	}, [isAuth, navigate]);
 	return children;
 }

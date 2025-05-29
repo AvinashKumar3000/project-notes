@@ -1,6 +1,4 @@
 import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router';
-import Swal from 'sweetalert2';
 import AuthContext from '../context/AuthContext';
 
 export default function SignUp() {

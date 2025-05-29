@@ -4,7 +4,7 @@ import './Counter.css';
 export default function Counter() {
 	const [level, setLevel] = useState(10);
 	const waterRef = useRef(null);
-	let a = 100;
+
 	useEffect(() => {
 		waterRef.current.style.height = `${level}%`;
 	}, [level]);

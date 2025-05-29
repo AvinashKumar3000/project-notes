@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 export default function StopWatch() {
 	const [isStarted, setIsStarted] = useState(false);

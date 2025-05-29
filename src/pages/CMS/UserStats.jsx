@@ -10,7 +10,7 @@ export default function UserStats() {
 
 		// Aggregate stats per user
 		const statsMap = {};
-		allHistory.forEach(({ email, action }) => {
+		allHistory.forEach(({ email }) => {
 			if (!statsMap[email]) {
 				statsMap[email] = { email, actions: 0 };
 			}
